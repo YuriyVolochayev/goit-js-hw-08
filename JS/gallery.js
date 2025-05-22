@@ -70,29 +70,11 @@ container.insertAdjacentHTML("beforeend", createMarkup(images))
 
 function createMarkup(arr) {
     return arr.map(item => `
+
         <li class="gallery-item">
-        <a class="gallery-link" href="large-image.jpg">
-        <img class="gallery-image" src="${item.preview}" alt="${item.description}" data-source="${item.original}">
+        <a class="gallery-link" href="${item.original}">
+        <img class="gallery-image" src="${item.preview}" alt="${item.description}" data-source="${item.original}" width="360px" height="200px"/>
         </a>
         </li>
         `).join("");
 }
-
-
-//     <li class="gallery-item">
-//   <a class="gallery-link" href="large-image.jpg">
-//     <img
-//       class="gallery-image"
-//       src="small-image.jpg"
-//       data-source="large-image.jpg"
-//       alt="Image description"
-//     />
-//   </a>
-// </li>
-
-// В атрибуті src тега <img> вказуємо посилання на маленьку версію зображення.
-// Для атрибута alt використовуємо опис зображення.
-// Посилання на велике зображення повинно зберігатися в data-атрибуті source на елементі <img>, і вказуватися в href посилання.
-// Зверни увагу на те, що зображення огорнуте посиланням, у якого атрибут href вказує на шлях до файлу з зображенням.
-// Отже клік по ньому може викликати завантаження зображення на комп’ютер користувача.
-// Заборони цю поведінку за замовчуванням.
