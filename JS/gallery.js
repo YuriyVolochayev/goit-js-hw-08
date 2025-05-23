@@ -88,7 +88,9 @@ function onGalleryClick(event) {
     if (imageElement.nodeName !== 'IMG') return;
     
     const largeImageURL = imageElement.dataset.source;
-    console.log(largeImageURL);    
+    console.log(largeImageURL);
+    console.log(window);
+    
 
     const modal = basicLightbox.create(`
         <img src="${largeImageURL}" alt="${imageElement.alt}" />
