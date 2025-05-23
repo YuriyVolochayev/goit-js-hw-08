@@ -78,3 +78,22 @@ function createMarkup(arr) {
         </li>
         `).join("");
 }
+
+container.addEventListener("click", onGalleryClick);
+
+function onGalleryClick(event) {
+    event.preventDefault();
+
+    const imageElement = event.target;
+    if (imageElement.nodeName !== 'IMG') return;
+    
+    const largeImageURL = imageElement.dataset.source;
+    console.log(largeImageURL);    
+
+    const modal = basicLightbox.create(`
+        <img src="${largeImageURL}" alt="${imageElement.alt}" />
+    `);
+
+    modal.show();
+    
+}
