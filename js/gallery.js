@@ -78,7 +78,6 @@ function createMarkup(arr) {
         </li>
         `).join("");
 }
-
 container.addEventListener("click", onGalleryClick);
 
 function onGalleryClick(event) {
